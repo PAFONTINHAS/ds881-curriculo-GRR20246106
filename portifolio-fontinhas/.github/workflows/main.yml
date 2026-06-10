@@ -1,0 +1,52 @@
+name: CI/CD Portifolio Angular
+
+on:
+  push: 
+    branches: ["main"]
+  pull_request: 
+    branches: ["main"]
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
+jobs:
+  lint_and_build: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+      
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with: 
+          node-version: '20'
+      
+      - name: Instalar Dependências
+        run: npm ci
+     
+      - name: Lint
+        run: npm run lint
+
+      - name: Build da Aplicação
+        run: npm run build -- --base-href /ds881-curriculo-GRR20246106
+
+      - name: Upload do artefato para o Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/portilio-fontinhas/browser
+  
+  deploy: 
+    needs: lint_and_build
+    if: github.event.name == 'push' && github.ref == 'refs/head/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar no Github Pages
+        id: deployment
+        uses: action/deploy-pages@v4
+
+
