@@ -8,7 +8,7 @@ on:
 
 permissions:
   contents: read
-  packages: write
+  pages: write
   id-token: write
 
 jobs:
@@ -30,16 +30,16 @@ jobs:
         run: npm run lint
 
       - name: Build da Aplicação
-        run: npm run build -- --base-href /ds881-curriculo-GRR20246106
+        run: npm run build -- --base-href /ds881-curriculo-GRR20246106/
 
       - name: Upload do artefato para o Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/portilio-fontinhas/browser
+          path: dist/portifolio-fontinhas/browser
   
   deploy: 
     needs: lint_and_build
-    if: github.event.name == 'push' && github.ref == 'refs/head/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -47,6 +47,6 @@ jobs:
     steps:
       - name: Publicar no Github Pages
         id: deployment
-        uses: action/deploy-pages@v4
+        uses: actions/deploy-pages@v4
 
 
