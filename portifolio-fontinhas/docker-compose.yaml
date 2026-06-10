@@ -1,0 +1,13 @@
+services:
+  angular-dev:
+    build: .
+    ports:
+     - "8080:4200"
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+    # host obrigatório para acessar a aplicação fora do container
+    # poll garante que o hot reload funcione perfeitamente através do volume
+    command: npm start -- --host 0.0.0.0 --poll 2000
+    
