@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 *{
-    background-color: #050505;
+    /* background-color: #050505; */
     margin: 0;
     box-sizing: border-box;
     user-select: none;
+    scroll-behavior: smooth;
 }
+
