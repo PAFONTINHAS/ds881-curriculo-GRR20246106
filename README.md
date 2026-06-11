@@ -1,3 +1,8 @@
+## Acesso ao portfólio
+
+https://pafontinhas.github.io/ds881-curriculo-GRR20246106
+
+
 ## Executando o Projeto Localmente (Docker)
 
 Este projeto foi configurado para ser executado em um ambiente isolado utilizando Docker, garantindo que não seja necessário instalar dependências como Node.js ou Angular CLI na máquina hospedeira.
@@ -39,3 +44,7 @@ Este projeto foi configurado para ser executado em um ambiente isolado utilizand
 
    ```bash
     docker compose down
+
+### Proteção da Branch Main
+!['alt text'](image-2.png)
+![alt text](image.png)
