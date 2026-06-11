@@ -1,0 +1,47 @@
+<section id="projetos" class="projects-section">
+    <div class="container">
+        <h2 class="section-title">/projetos<span class="cursor">_</span></h2>
+
+        <div class="projects-grid">
+
+            @for (projeto of projects; track projeto.title) {
+            <article class="project-card">
+                <div class="card-header">
+                    <h3 class="project-name">{{ projeto.title }}</h3>
+                    <span class="status-badge" [class]="projeto.status.toLowerCase()">
+                        [ {{ projeto.status }} ]
+                    </span>
+                </div>
+
+                <p class="project-desc">
+                    {{ projeto.description }}
+                </p>
+
+                <div class="card-footer">
+                    <div class="project-techs">
+                        Tecnologias:
+                        @for (stack of projeto.stacks; track stack.tool) {
+                        <span>[ {{ stack.tool }} ]</span>
+                        }
+                    </div>
+
+                    <div class="project-links">
+                        @if (projeto.githubVisibility === 'PUBLIC' && projeto.githubRepo) {
+                        <a [href]="projeto.githubRepo" target="_blank" class="project-link">
+                            Link do Repositório
+                        </a>
+                        }
+
+                        @if (projeto.websiteLink) {
+                        <a [href]="projeto.websiteLink" target="_blank" class="project-link">
+                            Link do Site
+                        </a>
+                        }
+                    </div>
+                </div>
+            </article>
+            }
+
+        </div>
+    </div>
+</section>
