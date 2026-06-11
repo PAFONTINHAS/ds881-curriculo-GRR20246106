@@ -1,0 +1,75 @@
+.contact-section {
+  background-color: #050505;
+  color: #e0e0e0;
+  padding: 4rem 2rem 2rem 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Mantendo a identidade visual dos títulos */
+.section-title {
+  font-family: 'Fira Code', monospace;
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 1rem;
+}
+
+.cursor { animation: blink 1s step-end infinite; color: #555; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.contact-content {
+  margin-bottom: 4rem;
+}
+
+.contact-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #a0a0a0;
+  margin-bottom: 3rem;
+}
+
+.contact-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.link-item {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.2s, color 0.2s;
+  display: inline-block;
+}
+
+.link-item:hover {
+  color: #a0a0a0;
+  transform: translateY(-2px); /* Leve animação para cima ao passar o mouse */
+}
+
+.bracket {
+  color: #333;
+  transition: color 0.2s;
+}
+
+.link-item:hover .bracket {
+  color: #ffffff; /* Os colchetes acendem no hover */
+}
+
+/* === FOOTER === */
+.portfolio-footer {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background-color: #020202; /* Um preto imperceptivelmente mais profundo */
+  border-top: 1px solid #111;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: #444;
+}
