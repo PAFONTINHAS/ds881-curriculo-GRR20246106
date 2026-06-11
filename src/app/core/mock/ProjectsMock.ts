@@ -29,7 +29,7 @@ export const ProjectsMock : Project[] = [
     },
     
     {
-        title: "Site Natália Martinienco - Nail Designer",
+        title: "Site NM - Nail Designer",
         description: `
             Projeto focado no agendamento de serviços voltados a manicure.
             Possui serviços como alongamento de unhas, blindagem, fibra de vidro, e muito mais.
